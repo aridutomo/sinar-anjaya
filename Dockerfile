@@ -8,6 +8,6 @@ RUN npm run build
 
 # Runtime container
 FROM nginx:alpine
-COPY --from=builder /app/out /usr/share/nginx/html
+COPY --from=builder /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
